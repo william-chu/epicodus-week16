@@ -1,5 +1,5 @@
 import React from 'react';
-import landingPageMasthead from '../assets/images/header-masthead.jpg';
+import landingPageMasthead from '../assets/images/header_masthead.jpg';
 
 function LandingPage() {
   return (
@@ -22,26 +22,38 @@ function LandingPage() {
           margin: 0;
           font-family: cursive;
           font-weight: lighter;
-          font-size: 3.5rem;
+          font-size: 5rem;
         }
 
         .masthead p {
           font-size: 1.2rem;
         }
 
+        .masthead .author-text {
+          font-size: 1rem;
+          padding-left: 200px;
+        }
+
         @media (min-width: 1000px) {
           .masthead h1 {
-            font-size: 5.5rem;
+            font-size: 7.5rem;
+            text-shadow: 2px 2px 4px black;
           }
 
           .masthead p {
-            font-size: 2rem;
+            font-size: 1.8rem;
+          }
+
+          .masthead .author-text {
+            font-size: 1.5rem;
+            padding-left: 300px;
           }
         }
       `}</style>
       <div className="masthead">
-        <h1>Bloodborne Brewery</h1>
+        <h1>LoveCraft</h1>
         <p><em>Fear the old blood, drink beer instead...</em></p>
+        <p className="author-text">- Provost Willem</p>
       </div>
     </div>
   );
