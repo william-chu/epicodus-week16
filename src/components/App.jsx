@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Header from './Header';
 import LandingPage from './LandingPage';
 import TapList from './TapList';
+import NewTap from './NewTap';
 import Error404 from './Error404';
 
 function App(){
@@ -10,7 +11,7 @@ function App(){
     <div>
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css?family=Tangerine');
-        
+
         body, html {
           margin: 0;
           height: 100%;
@@ -19,6 +20,7 @@ function App(){
         .app-wrapper {
           font-family: sans-serif;
           background-color: #0c0c0c;
+          color: white;
         }
 
         a {
@@ -33,6 +35,7 @@ function App(){
         <Switch>
           <Route exact path='/' component={LandingPage} />
           <Route path='/taplist' component={TapList} />
+          <Route path='/new-tap' component={NewTap} />
           <Route component={Error404} />
         </Switch>
       </div>

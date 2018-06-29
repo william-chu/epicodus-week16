@@ -13,12 +13,11 @@ function Header() {
           position: fixed;
           width: 100%;
         }
-
-  
       `}</style>
       <div className="header-wrapper">
-        <Link className="link" to='/'>HOME</Link>
-        <Link className="link" to='/taplist'>TAPLIST</Link>
+        <Link to='/'>HOME</Link>
+        <Link to='/taplist'>TAPLIST</Link>
+        <Link to='/new-tap'>+ NEW TAP</Link>
       </div>
     </div>
   );

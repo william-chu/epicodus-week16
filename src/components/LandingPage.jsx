@@ -20,7 +20,7 @@ function LandingPage() {
 
         .landing-wrapper h1 {
           margin: 0;
-          font-family: 'Tangerine';
+          font-family: 'Tangerine', serif;
           font-weight: lighter;
           font-size: 6rem;
         }

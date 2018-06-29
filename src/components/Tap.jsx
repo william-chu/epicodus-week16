@@ -18,7 +18,7 @@ function Tap(props) {
 
         .tap-wrapper h1 {
           text-align: center;
-          font-family: 'Tangerine';
+          font-family: 'Tangerine', serif;
           border-bottom: 1px dotted #808284;
           font-size: 2.5rem;
           padding-bottom: 20px;
