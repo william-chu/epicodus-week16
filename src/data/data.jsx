@@ -8,7 +8,7 @@ const TAPLIST = [
     img: kegHuntsman,
     name: 'Huntsman IPA',
     brewer: 'Yharnam Brewing',
-    description: 'Full-bodied with ample hops',
+    description: 'Full-bodied IPA with ample hops',
     abv: '6.8%',
     price: '7',
     remaining: '20'
@@ -17,7 +17,7 @@ const TAPLIST = [
     img: kegMadOne,
     name: 'Mad One IIPA',
     brewer: 'Hemwick Hops',
-    description: 'Double IPA with kick',
+    description: 'Double IPA with a kick',
     abv: '8%',
     price: '7',
     remaining: '60'

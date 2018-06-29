@@ -11,7 +11,6 @@ function Tap(props) {
           grid-template-columns: 1fr;
           align-items: center;
           grid-gap: 5px;
-          margin: 25px 50px;
           padding: 10px;
           color: #2b2b2b;
           background: linear-gradient(to bottom, rgba(0,0,0,.3),rgba(0,0,0,.3)), url(${textureConcrete});
@@ -30,12 +29,19 @@ function Tap(props) {
           font-size: 1.5rem;
           border-bottom: 2px dotted #2b2b2b;
           padding-bottom: 20px;
+        }
+
+        .tap-wrapper h2, .tap-wrapper h3 {
+          text-align: center;
+        }
+
+        .tap-wrapper h3, .tap-wrapper p {
           font-weight: lighter;
         }
 
-        .tap-wrapper h2, .tap-wrapper h3, .tap-wrapper p {
-          font-weight: lighter;
-          padding-left: 30px;
+        .tap-wrapper p {
+          padding: 10px 15px 0;
+          font-size: .9rem;
         }
 
         .tap-wrapper img {
@@ -47,13 +53,13 @@ function Tap(props) {
       <div className="tap-wrapper">
         <img src={props.img} />
         <div>
-          <h1>{props.name} • ${props.price}</h1>
-          <h3>{props.brewer}</h3>
-          <p>{props.description}</p>
+          <h1>{props.name} - ${props.price}</h1>
+          <h3>- {props.brewer} -</h3>
+          <p><em>{props.description}</em></p>
         </div>
         <div>
-          <h2>{props.abv} ABV</h2>
           <h3>Pints Remaining: {props.remaining}</h3>
+          <h2>{props.abv} ABV</h2>
         </div>
       </div>
     </div>
