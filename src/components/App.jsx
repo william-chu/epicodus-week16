@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Header from './Header';
+import LandingPage from './LandingPage';
 import Error404 from './Error404';
 
 function App(){
@@ -17,7 +17,7 @@ function App(){
       `}</style>
       <div className="app-wrapper">
         <Switch>
-          <Route exact path='/' component={Header} />
+          <Route exact path='/' component={LandingPage} />
           <Route component={Error404} />
         </Switch>
       </div>
