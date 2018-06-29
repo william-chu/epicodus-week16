@@ -67,7 +67,7 @@ function Tap(props) {
       <div className="tap-wrapper">
         <img src={props.img} />
         <div>
-          <h1>{props.name}<br />${props.price}</h1>
+          <h1>{props.name}<br/>${props.price}</h1>
           <h3>- {props.brewer} -</h3>
           <p><em>{props.description}</em></p>
         </div>

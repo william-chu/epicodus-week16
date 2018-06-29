@@ -11,6 +11,7 @@ function App(){
     <div>
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css?family=Tangerine');
+        @import url('https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps');
 
         body, html {
           margin: 0;
@@ -21,13 +22,18 @@ function App(){
           font-family: sans-serif;
           background-color: #0c0c0c;
           color: white;
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-font-smoothing: antialiased;
         }
 
         a {
           color: white;
           text-decoration: none;
-          font-weight: lighter;
           letter-spacing: 2px;
+        }
+
+        a:hover {
+          opacity: .7;
         }
       `}</style>
       <div className="app-wrapper">

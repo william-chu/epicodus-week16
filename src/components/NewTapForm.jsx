@@ -12,7 +12,7 @@ function NewTapForm() {
         Tapform works
       </div>
     </div>
-  )
+  );
 }
 
 export default NewTapForm;

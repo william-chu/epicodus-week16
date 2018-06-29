@@ -8,6 +8,7 @@ function NewTap() {
         .newtap-wrapper{
           padding: 50px 25px;
           max-width: 900px;
+          height: 100vh;
           display: block;
           margin: 0 auto;
         }
@@ -16,7 +17,7 @@ function NewTap() {
         <NewTapForm/>
       </div>
     </div>
-  )
+  );
 }
 
 export default NewTap;

@@ -32,6 +32,7 @@ function LandingPage() {
         .landing-wrapper .author-text {
           font-size: 1rem;
           padding-left: 200px;
+          font-family: serif;
         }
 
         @media (min-width: 1000px) {
@@ -46,7 +47,6 @@ function LandingPage() {
           .landing-wrapper .author-text {
             font-size: 1.5rem;
             padding-left: 300px;
-            font-family: serif;
           }
         }
       `}</style>
