@@ -8,6 +8,8 @@ A Tap Room application built in React.
 
 ## Component Structure
 
+![Component Structure](https://raw.githubusercontent.com/william-chu/epicodus-week16/master/component_structure.png)
+
 ## Development Issues
 
 ## Angular vs React Observations
