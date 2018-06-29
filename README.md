@@ -11,8 +11,13 @@ A Tap Room application built in React.
 ![Component Structure](https://raw.githubusercontent.com/william-chu/epicodus-week16/master/component_structure.png)
 
 ## Development Issues
+* Not sure how I should structure the form without knowing about state
+* Responsive styling was not as intuitive using jsx style tags and components
+* First attempt to publish to gh-pages did not work
 
 ## Angular vs React Observations
+* Component organization is different
+* React combines styling and markup into one component
 
 ## Setup/Installation Requirements
 
