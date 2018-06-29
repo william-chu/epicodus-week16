@@ -25,8 +25,8 @@ function Tap(props) {
 
         .tap-wrapper h1 {
           text-align: center;
-          font-family: serif;
-          font-size: 1.5rem;
+          font-family: 'Tangerine';
+          font-size: 2.5rem;
           border-bottom: 2px dotted #2b2b2b;
           padding-bottom: 20px;
         }
@@ -53,7 +53,7 @@ function Tap(props) {
       <div className="tap-wrapper">
         <img src={props.img} />
         <div>
-          <h1>{props.name} - ${props.price}</h1>
+          <h1>{props.name}<br />${props.price}</h1>
           <h3>- {props.brewer} -</h3>
           <p><em>{props.description}</em></p>
         </div>

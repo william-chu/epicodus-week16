@@ -20,9 +20,9 @@ function LandingPage() {
 
         .landing-wrapper h1 {
           margin: 0;
-          font-family: cursive;
+          font-family: 'Tangerine';
           font-weight: lighter;
-          font-size: 5rem;
+          font-size: 6rem;
         }
 
         .landing-wrapper p {
@@ -36,8 +36,7 @@ function LandingPage() {
 
         @media (min-width: 1000px) {
           .landing-wrapper h1 {
-            font-size: 7.5rem;
-            text-shadow: 2px 2px 4px black;
+            font-size: 8rem;
           }
 
           .landing-wrapper p {

@@ -6,18 +6,18 @@ import kegCainhurst from '../assets/images/keg_cainhurst.png';
 const TAPLIST = [
   {
     img: kegHuntsman,
-    name: 'Huntsman IPA',
+    name: 'Huntsman Red',
     brewer: 'Yharnam Brewing',
-    description: 'Full-bodied IPA with ample hops',
+    description: 'Full-bodied red ale',
     abv: '6.8%',
     price: '7',
     remaining: '20'
   },
   {
     img: kegMadOne,
-    name: 'Mad One IIPA',
+    name: 'The Mad One',
     brewer: 'Hemwick Hops',
-    description: 'Double IPA with a kick',
+    description: 'Double IPA that will drive you crazy',
     abv: '8%',
     price: '7',
     remaining: '60'
@@ -26,7 +26,7 @@ const TAPLIST = [
     img: kegCelestial,
     name: 'Celestial Saison',
     brewer: 'Iosefka\'s Clinic',
-    description: 'Spicy Pale Ale',
+    description: 'Spicy pale ale with fruit notes',
     abv: '4.7%',
     price: '5',
     remaining: '65'
@@ -35,7 +35,7 @@ const TAPLIST = [
     img: kegCainhurst,
     name: 'Cainhurst Cider',
     brewer: 'Silver Lady Orchard',
-    description: 'Refreshing Dry Cider',
+    description: 'A refreshingly dry cider',
     abv:  '5.9%',
     price: '6',
     remaining: '75'

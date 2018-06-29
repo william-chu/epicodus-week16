@@ -9,6 +9,8 @@ function App(){
   return (
     <div>
       <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css?family=Tangerine');
+        
         body, html {
           margin: 0;
           height: 100%;
