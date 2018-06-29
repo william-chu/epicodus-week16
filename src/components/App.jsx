@@ -6,10 +6,17 @@ import Error404 from './Error404';
 function App(){
   return (
     <div>
-      <Header />
-      <Switch>
-        <Route component={Error404} />
-      </Switch>
+      <style jsx global>{`
+        .app-wrapper {
+          font-family: sans-serif;
+        }
+      `}</style>
+      <div className="app-wrapper">
+        <Header />
+        <Switch>
+          <Route component={Error404} />
+        </Switch>
+      </div>
     </div>
   );
 }
