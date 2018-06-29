@@ -16,6 +16,7 @@ function App(){
 
         .app-wrapper {
           font-family: sans-serif;
+          background-color: #0c0c0c;
         }
 
         a {

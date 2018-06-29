@@ -7,7 +7,10 @@ function TapList() {
     <div>
       <style jsx>{`
         .taplist-wrapper {
-          padding-top: 50px;
+          padding: 50px 0;
+          max-width: 900px;
+          display: block;
+          margin: 0 auto;
         }
       `}</style>
       <div className="taplist-wrapper">

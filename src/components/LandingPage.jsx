@@ -5,7 +5,7 @@ function LandingPage() {
   return (
     <div>
       <style jsx>{`
-        .masthead {
+        .landing-wrapper {
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -18,39 +18,40 @@ function LandingPage() {
           text-align: center;
         }
 
-        .masthead h1 {
+        .landing-wrapper h1 {
           margin: 0;
           font-family: cursive;
           font-weight: lighter;
           font-size: 5rem;
         }
 
-        .masthead p {
+        .landing-wrapper p {
           font-size: 1.2rem;
         }
 
-        .masthead .author-text {
+        .landing-wrapper .author-text {
           font-size: 1rem;
           padding-left: 200px;
         }
 
         @media (min-width: 1000px) {
-          .masthead h1 {
+          .landing-wrapper h1 {
             font-size: 7.5rem;
             text-shadow: 2px 2px 4px black;
           }
 
-          .masthead p {
+          .landing-wrapper p {
             font-size: 1.8rem;
           }
 
-          .masthead .author-text {
+          .landing-wrapper .author-text {
             font-size: 1.5rem;
             padding-left: 300px;
+            font-family: serif;
           }
         }
       `}</style>
-      <div className="masthead">
+      <div className="landing-wrapper">
         <h1>LoveCraft</h1>
         <p><em>Fear the old blood, drink beer instead...</em></p>
         <p className="author-text">- Provost Willem</p>
