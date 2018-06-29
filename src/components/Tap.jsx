@@ -10,24 +10,17 @@ function Tap(props) {
           display: grid;
           grid-template-columns: 1fr;
           align-items: center;
-          grid-gap: 5px;
           padding: 10px;
           color: #2b2b2b;
           background: linear-gradient(to bottom, rgba(0,0,0,.3),rgba(0,0,0,.3)), url(${textureConcrete});
           border-radius: 5px;
         }
 
-        @media (min-width: 800px) {
-          .tap-wrapper {
-            grid-template-columns: 1fr 1fr 1fr;
-          }
-        }
-
         .tap-wrapper h1 {
           text-align: center;
           font-family: 'Tangerine';
+          border-bottom: 1px dotted #808284;
           font-size: 2.5rem;
-          border-bottom: 2px dotted #2b2b2b;
           padding-bottom: 20px;
         }
 
@@ -48,6 +41,27 @@ function Tap(props) {
           width: 100%;
           border-radius: 5px;
           box-shadow: 0 0 10px black;
+          max-width: 300px;
+          display: block;
+          margin: auto;
+        }
+
+        @media (min-width: 800px) {
+          .tap-wrapper {
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+
+          .tap-wrapper h1 {
+            border-bottom: none;
+          }
+
+          .left-border {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-left: 1px dotted #808284;
+            height: 100%;
+          }
         }
       `}</style>
       <div className="tap-wrapper">
@@ -57,7 +71,7 @@ function Tap(props) {
           <h3>- {props.brewer} -</h3>
           <p><em>{props.description}</em></p>
         </div>
-        <div>
+        <div className="left-border">
           <h3>Pints Remaining: {props.remaining}</h3>
           <h2>{props.abv} ABV</h2>
         </div>
