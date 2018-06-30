@@ -15,6 +15,7 @@ function App(){
 
         body, html {
           margin: 0;
+          width:100%;
           height: 100%;
         }
 

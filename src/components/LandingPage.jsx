@@ -16,6 +16,7 @@ function LandingPage() {
           color: white;
           font-weight: lighter;
           text-align: center;
+          min-height: 350px;
         }
 
         .landing-wrapper h1 {
@@ -31,7 +32,7 @@ function LandingPage() {
 
         .landing-wrapper .author-text {
           font-size: 1rem;
-          padding-left: 200px;
+          padding-left: 175px;
           font-family: serif;
         }
 
@@ -46,7 +47,7 @@ function LandingPage() {
 
           .landing-wrapper .author-text {
             font-size: 1.5rem;
-            padding-left: 300px;
+            padding-left: 250px;
           }
         }
       `}</style>
