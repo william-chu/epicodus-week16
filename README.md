@@ -4,7 +4,7 @@
 
 ## Description
 
-A Tap Room application built in React.
+A tap room application built in React.
 
 ## Component Structure
 
