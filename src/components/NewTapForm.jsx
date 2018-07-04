@@ -1,145 +1,210 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
+
 import textureConcrete from '../assets/images/concrete_seamless.png';
+import kegUnspecified from '../assets/images/keg_unspecified.jpg';
+import kegHuntsman from '../assets/images/keg_huntsman.png';
+import kegMadOne from '../assets/images/keg_madone.png';
+import kegCelestial from '../assets/images/keg_celestial.png';
+import kegCainhurst from '../assets/images/keg_cainhurst.png';
 
-function NewTapForm(props) {
-  let img = null;
-  let name = null;
-  let price = null;
-  let brewer = null;
-  let description = null;
-  let remaining = null;
-  let abv = null;
+class NewTapForm extends React.Component {
 
-  function handleNewTapFormSubmission(e) {
-    e.preventDefault();
-    props.onNewTapCreation({img: img.value, name: name.value, price: price.value, brewer: brewer.value, description: description.value, remaining: remaining.value, abv: abv.value, id: v4()});
-    img.value = '';
-    name.value = '';
-    price.value = '';
-    brewer.value = '';
-    description.value = '';
-    remaining.value = '';
-    abv.value = '';
+  constructor(props){
+    super(props);
+    this.state = {
+      img: kegUnspecified
+    };
+    this.name = null;
+    this.price = null;
+    this.brewer = null;
+    this.description = null;
+    this.remaining = null;
+    this.abv = null;
+    this.handleImageSelect = this.handleImageSelect.bind(this);
+    this.handleNewTapFormSubmission = this.handleNewTapFormSubmission.bind(this);
   }
 
-  return (
-    <div>
-      <style jsx>{`
-        .newtapform-wrapper{
-          color: #2b2b2b;
-          background: linear-gradient(to bottom, rgba(0,0,0,.3),rgba(0,0,0,.3)), url(${textureConcrete});
-          border-radius: 5px;
-          padding: 25px 25px;
-        }
+  handleImageSelect(e) {
+    if (e.target.value === '') {
+      this.setState({img: kegUnspecified});
+    } else {
+      this.setState({img: e.target.value});
+    }
+  }
 
-        .newtapform-wrapper h1 {
-          font-family: sans-serif;
-          font-weight: lighter;
-          text-align: center;
-          font-size: 3rem;
-          letter-spacing: 2px;
-          margin: 0;
-        }
 
-        .newtapform-wrapper form {
-          display: grid;
-          grid-template-columns: 1fr;
-          align-items: start;
-          padding: 10px;
-        }
+  handleNewTapFormSubmission(e) {
+    e.preventDefault();
+    this.props.onNewTapCreation({img: this.state.img, name: this.name.value, price: this.price.value, brewer: this.brewer.value, description: this.description.value, remaining: this.remaining.value, abv: this.abv.value, id: v4()});
+    this.name.value = '';
+    this.price.value = '';
+    this.brewer.value = '';
+    this.description.value = '';
+    this.remaining.value = '';
+    this.abv.value = '';
+    this.setState({img: kegUnspecified});
+  }
 
-        .form-section {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .form-section input, .form-section button {
-          margin: 5px;
-          padding: 10px;
-          border-radius: 5px;
-          font-size: 1rem;
-        }
-
-        .form-section button {
-          background-color: #2b2b2b;
-          border: none;
-          color: white;
-          width: 150px;
-          display: block;
-          margin: 5px auto;
-        }
-
-        .form-section button:hover {
-          opacity: .7;
-        }
-
-        @media (min-width: 800px) {
-          .newtapform-wrapper form {
-            grid-template-columns: 1fr 1fr 1fr;
+  render() {
+    return (
+      <div>
+        <style jsx>{`
+          .newtapform-wrapper{
+            color: #2b2b2b;
+            background: linear-gradient(to bottom, rgba(0,0,0,.3),rgba(0,0,0,.3)), url(${textureConcrete});
+            border-radius: 5px;
+            padding: 20px 10px;
           }
-        }
-      `}</style>
-      <div className="newtapform-wrapper">
-        <h1>+ NEW TAP</h1>
-        <form onSubmit={handleNewTapFormSubmission}>
-          <div className="form-section">
-            <input
-              type='text'
-              id='img'
-              placeholder='Select an image url'
-              required
-              ref={(input) => {img = input;}}
-            />
-          </div>
-          <div className="form-section">
-            <input
-              type='text'
-              id='name'
-              placeholder='Enter beer name'
-              required
-              ref={(input) => {name = input;}} />
-            <input
-              id='price'
-              type="number"
-              min="1"
-              placeholder='Enter price per pint'
-              required
-              ref={(input) => {price = input;}} />
-            <input
-              id='brewer'
-              placeholder='Enter brewer name'
-              required
-              ref={(input) => {brewer = input;}} />
-            <input
-              id='description'
-              placeholder='Enter beer description'
-              required
-              ref={(input) => {description = input;}} />
-          </div>
-          <div className="form-section">
-            <input
-              id='remaining'
-              type="number"
-              min="1"
-              placeholder='Enter pints in keg'
-              required
-              ref={(input) => {remaining = input;}} />
-            <input
-              id='abv'
-              type="number"
-              step=".1"
-              min="0.1"
-              placeholder='Enter abv'
-              required
-              ref={(input) => {abv = input;}} />
+
+          .newtapform-wrapper h1 {
+            font-family: sans-serif;
+            font-weight: lighter;
+            text-align: center;
+            font-size: 3rem;
+            letter-spacing: 2px;
+            margin: 0;
+          }
+
+          .newtapform-wrapper form {
+            max-width: 725px;
+            display: block;
+            margin: auto;
+          }
+
+          .newtapform-wrapper select {
+            width: 100%;
+            min-width: 200px;
+            max-width: 300px;
+            display: block;
+            margin: 20px auto;
+            font-size: 1em;
+            height: 2.5em;
+            background: white;
+            outline: none;
+          }
+
+          .newtapform-wrapper img {
+            display: block;
+            margin: 20px auto;
+            width: 100%;
+            max-width: 270px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px black;
+          }
+
+          .form-section-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+          }
+
+          @media (min-width: 800px) {
+            .form-section-grid {
+              grid-template-columns: 1fr 1fr;
+              align-items: center;
+            }
+          }
+
+          .form-input-flex {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .form-input-flex input {
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            max-width: 290px;
+            display: block;
+            margin: 10px auto;
+          }
+
+          .newtapform-wrapper button {
+            background-color: #2b2b2b;
+            color: white;
+            width: 150px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            display: block;
+            padding: 10px;
+            margin: 20px auto 10px;
+          }
+
+          .form-input-flex button:hover {
+            opacity: .7;
+          }
+
+          @media (min-width: 800px) {
+            .newtapform-wrapper form {
+              grid-template-columns: 1fr 1fr 1fr;
+            }
+          }
+        `}</style>
+        <div className="newtapform-wrapper">
+          <h1>+ NEW TAP</h1>
+          <form onSubmit={this.handleNewTapFormSubmission}>
+            <div className="form-section-grid">
+              <div>
+                <select value={this.state.img} onChange={this.handleImageSelect} required>
+                  <option value="" defaultValue>Select an image</option>
+                  <option value={kegHuntsman}>Huntsman</option>
+                  <option value={kegMadOne}>Mad One</option>
+                  <option value={kegCelestial}>Celestial</option>
+                  <option value={kegCainhurst}>Cainhurst</option>
+                </select>
+                <img src={this.state.img} />
+              </div>
+              <div className="form-input-flex">
+                <input
+                  type='text'
+                  id='name'
+                  placeholder='Enter beer name'
+                  required
+                  ref={(input) => {this.name = input;}} />
+                <input
+                  id='brewer'
+                  placeholder='Enter brewer name'
+                  required
+                  ref={(input) => {this.brewer = input;}} />
+                <input
+                  id='description'
+                  placeholder='Enter beer description'
+                  required
+                  ref={(input) => {this.description = input;}} />
+                <input
+                  id='price'
+                  type="number"
+                  min="1"
+                  placeholder='Enter price per pint'
+                  required
+                  ref={(input) => {this.price = input;}} />
+                <input
+                  id='remaining'
+                  type="number"
+                  min="1"
+                  placeholder='Enter pints in keg'
+                  required
+                  ref={(input) => {this.remaining = input;}} />
+                <input
+                  id='abv'
+                  type="number"
+                  step=".1"
+                  min="0.1"
+                  placeholder='Enter ABV'
+                  required
+                  ref={(input) => {this.abv = input;}} />
+              </div>
+            </div>
             <button type='submit'>ADD BEER</button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 NewTapForm.propTypes = {

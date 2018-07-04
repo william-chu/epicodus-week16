@@ -13,6 +13,7 @@ function NewTapControl(props) {
           height: 100vh;
           display: block;
           margin: 0 auto;
+          min-height: 350px;
         }
       `}</style>
       <div className="newtapcontrol-wrapper">
