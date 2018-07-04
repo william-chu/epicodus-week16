@@ -86,9 +86,9 @@ Tap.propTypes = {
   name: PropTypes.string.isRequired,
   brewer: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  abv: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
-  remaining: PropTypes.string.isRequired
+  abv: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
+  remaining: PropTypes.number.isRequired
 };
 
 export default Tap;

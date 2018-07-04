@@ -89,6 +89,7 @@ function NewTapForm(props) {
               type='text'
               id='img'
               placeholder='Select an image url'
+              required
               ref={(input) => {img = input;}}
             />
           </div>
@@ -97,28 +98,41 @@ function NewTapForm(props) {
               type='text'
               id='name'
               placeholder='Enter beer name'
+              required
               ref={(input) => {name = input;}} />
             <input
               id='price'
+              type="number"
+              min="1"
               placeholder='Enter price per pint'
+              required
               ref={(input) => {price = input;}} />
             <input
               id='brewer'
               placeholder='Enter brewer name'
+              required
               ref={(input) => {brewer = input;}} />
             <input
               id='description'
               placeholder='Enter beer description'
+              required
               ref={(input) => {description = input;}} />
           </div>
           <div className="form-section">
             <input
               id='remaining'
+              type="number"
+              min="1"
               placeholder='Enter pints in keg'
+              required
               ref={(input) => {remaining = input;}} />
             <input
               id='abv'
+              type="number"
+              step=".1"
+              min="0.1"
               placeholder='Enter abv'
+              required
               ref={(input) => {abv = input;}} />
             <button type='submit'>ADD BEER</button>
           </div>

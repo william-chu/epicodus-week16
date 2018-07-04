@@ -22,9 +22,9 @@ class App extends React.Component {
           name: 'Huntsman Red',
           brewer: 'Yharnam Brewing',
           description: 'Full-bodied red ale',
-          abv: '6.8',
-          price: '7',
-          remaining: '20',
+          abv: 6.8,
+          price: 7,
+          remaining: 20,
           id: '1'
         },
         {
@@ -32,9 +32,9 @@ class App extends React.Component {
           name: 'The Mad One',
           brewer: 'Hemwick Hops',
           description: 'Double IPA that will drive you crazy',
-          abv: '8',
-          price: '7',
-          remaining: '60',
+          abv: 8,
+          price: 7,
+          remaining: 60,
           id: '2'
         },
         {
@@ -42,9 +42,9 @@ class App extends React.Component {
           name: 'Celestial Saison',
           brewer: 'Iosefka\'s Clinic',
           description: 'Spicy pale ale with fruit notes',
-          abv: '4.7',
-          price: '5',
-          remaining: '65',
+          abv: 4.7,
+          price: 5,
+          remaining: 65,
           id: '3'
         },
         {
@@ -52,9 +52,9 @@ class App extends React.Component {
           name: 'Cainhurst Cider',
           brewer: 'Silver Lady Orchard',
           description: 'A refreshingly dry cider',
-          abv:  '5.9',
-          price: '6',
-          remaining: '75',
+          abv:  5.9,
+          price: 6,
+          remaining: 75,
           id: '4'
         }
       ]
