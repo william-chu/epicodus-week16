@@ -6,48 +6,58 @@ import TapList from './TapList';
 import NewTap from './NewTap';
 import Error404 from './Error404';
 
-function App(){
-  return (
-    <div>
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css?family=Tangerine');
-        @import url('https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps');
+class App extends React.component {
 
-        body, html {
-          margin: 0;
-          width:100%;
-          height: 100%;
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      masterTapList: []
+    };
+  }
 
-        .app-wrapper {
-          font-family: sans-serif;
-          background-color: #0c0c0c;
-          color: white;
-          -moz-osx-font-smoothing: grayscale;
-          -webkit-font-smoothing: antialiased;
-        }
+  render() {
+    return (
+      <div>
+        <style jsx global>{`
+          @import url('https://fonts.googleapis.com/css?family=Tangerine');
+          @import url('https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps');
 
-        a {
-          color: white;
-          text-decoration: none;
-          letter-spacing: 2px;
-        }
+          body, html {
+            margin: 0;
+            width:100%;
+            height: 100%;
+          }
 
-        a:hover {
-          opacity: .7;
-        }
-      `}</style>
-      <div className="app-wrapper">
-        <Header />
-        <Switch>
-          <Route exact path='/' component={LandingPage} />
-          <Route path='/taplist' component={TapList} />
-          <Route path='/new-tap' component={NewTap} />
-          <Route component={Error404} />
-        </Switch>
+          .app-wrapper {
+            font-family: sans-serif;
+            background-color: #0c0c0c;
+            color: white;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+          }
+
+          a {
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+          }
+
+          a:hover {
+            opacity: .7;
+          }
+        `}</style>
+        <div className="app-wrapper">
+          <Header />
+          <Switch>
+            <Route exact path='/' component={LandingPage} />
+            <Route path='/taplist' component={TapList} />
+            <Route path='/new-tap' component={NewTap} />
+            <Route component={Error404} />
+          </Switch>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;

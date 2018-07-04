@@ -12,6 +12,13 @@ function NewTapForm() {
 
   function handleNewTapFormSubmission(e) {
     e.preventDefault();
+    img.value = '';
+    name.value = '';
+    price.value = '';
+    brewer.value = '';
+    description.value = '';
+    remaining.value = '';
+    abv.value = '';
   }
 
   return (
