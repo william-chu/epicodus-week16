@@ -11,7 +11,7 @@ import kegMadOne from '../assets/images/keg_madone.png';
 import kegCelestial from '../assets/images/keg_celestial.png';
 import kegCainhurst from '../assets/images/keg_cainhurst.png';
 
-class App extends React.component {
+class App extends React.Component {
 
   constructor(props) {
     super(props);
@@ -99,8 +99,8 @@ class App extends React.component {
           <Header />
           <Switch>
             <Route exact path='/' component={LandingPage} />
-            <Route path='/taplist' render={()=><TapList tapList={this.state.masterTapList} />} />
-            <Route path='/new-tap' render={()=><NewTapControl onNewTapCreation={this.handleAddingNewTapToList} />} />
+            <Route exact path='/taplist' render={()=><TapList tapList={this.state.masterTapList} />} />
+            <Route exact path='/new-tap' render={()=><NewTapControl onNewTapCreation={this.handleAddingNewTapToList} />} />
             <Route component={Error404} />
           </Switch>
         </div>

@@ -7,7 +7,7 @@ function NewTapControl(props) {
   return (
     <div>
       <style jsx>{`
-        .newtap-wrapper{
+        .newtapcontrol-wrapper{
           padding: 50px 25px;
           max-width: 900px;
           height: 100vh;
@@ -15,15 +15,15 @@ function NewTapControl(props) {
           margin: 0 auto;
         }
       `}</style>
-      <div className="newtap-wrapper">
-        <NewTapForm onNewTapCreation={this.props.onNewTapCreation}/>
+      <div className="newtapcontrol-wrapper">
+        <NewTapForm onNewTapCreation={props.onNewTapCreation}/>
       </div>
     </div>
   );
 }
 
-NewTap.propTypes = {
+NewTapControl.propTypes = {
   onNewTapCreation: PropTypes.func
 };
 
-export default NewTap;
+export default NewTapControl;
