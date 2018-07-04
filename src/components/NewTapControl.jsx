@@ -1,7 +1,9 @@
 import React from 'react';
 import NewTapForm from './NewTapForm';
+import PropTypes from 'prop-types';
 
-function NewTap() {
+
+function NewTapControl(props) {
   return (
     <div>
       <style jsx>{`
@@ -14,10 +16,14 @@ function NewTap() {
         }
       `}</style>
       <div className="newtap-wrapper">
-        <NewTapForm/>
+        <NewTapForm onNewTapCreation={this.props.onNewTapCreation}/>
       </div>
     </div>
   );
 }
+
+NewTap.propTypes = {
+  onNewTapCreation: PropTypes.func
+};
 
 export default NewTap;

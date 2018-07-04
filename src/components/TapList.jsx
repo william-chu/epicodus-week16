@@ -1,8 +1,8 @@
 import React from 'react';
 import Tap from './Tap';
-import TAPLIST from '../data/data';
+import PropTypes from 'prop-types';
 
-function TapList() {
+function TapList(props) {
   return(
     <div>
       <style jsx>{`
@@ -32,7 +32,7 @@ function TapList() {
       `}</style>
       <div className="taplist-wrapper">
         <div className="taplist-grid">
-          {TAPLIST.map((keg, index) =>
+          {props.tapList.map((keg, index) =>
             <Tap
               img={keg.img}
               name={keg.name}
@@ -48,5 +48,9 @@ function TapList() {
     </div>
   );
 }
+
+TapList.propTypes = {
+  tapList: PropTypes.array
+};
 
 export default TapList;
