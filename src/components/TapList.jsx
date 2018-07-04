@@ -32,7 +32,7 @@ function TapList(props) {
       `}</style>
       <div className="taplist-wrapper">
         <div className="taplist-grid">
-          {props.tapList.map((keg, index) =>
+          {props.tapList.map((keg) =>
             <Tap
               img={keg.img}
               name={keg.name}
@@ -41,7 +41,7 @@ function TapList(props) {
               abv={keg.abv}
               price={keg.price}
               remaining={keg.remaining}
-              key={index} />
+              key={keg.id} />
           )}
         </div>
       </div>

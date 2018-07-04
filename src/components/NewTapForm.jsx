@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 import textureConcrete from '../assets/images/concrete_seamless.png';
 
 function NewTapForm(props) {
@@ -13,7 +14,7 @@ function NewTapForm(props) {
 
   function handleNewTapFormSubmission(e) {
     e.preventDefault();
-    props.onNewTapCreation({img: img.value, name: name.value, price: price.value, brewer: brewer.value, description: description.value, remaining: remaining.value, abv: abv.value});
+    props.onNewTapCreation({img: img.value, name: name.value, price: price.value, brewer: brewer.value, description: description.value, remaining: remaining.value, abv: abv.value, id: v4()});
     img.value = '';
     name.value = '';
     price.value = '';
