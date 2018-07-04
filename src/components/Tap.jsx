@@ -24,7 +24,7 @@ function Tap(props) {
           padding-bottom: 20px;
         }
 
-        .tap-wrapper h2, .tap-wrapper h3 {
+        .tap-wrapper h2, .tap-wrapper h3, .tap-wrapper p {
           text-align: center;
         }
 
@@ -34,7 +34,8 @@ function Tap(props) {
 
         .tap-wrapper p {
           padding: 10px 15px 0;
-          font-size: .9rem;
+          font-size: 1.1rem;
+          font-family: serif;
         }
 
         .tap-wrapper img {

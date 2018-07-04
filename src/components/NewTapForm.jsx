@@ -2,6 +2,18 @@ import React from 'react';
 import textureConcrete from '../assets/images/concrete_seamless.png';
 
 function NewTapForm() {
+  let img = null;
+  let name = null;
+  let price = null;
+  let brewer = null;
+  let description = null;
+  let remaining = null;
+  let abv = null;
+
+  function handleNewTapFormSubmission(e) {
+    e.preventDefault();
+  }
+
   return (
     <div>
       <style jsx>{`
@@ -12,10 +24,19 @@ function NewTapForm() {
           padding: 25px 25px;
         }
 
+        .newtapform-wrapper h1 {
+          font-family: sans-serif;
+          font-weight: lighter;
+          text-align: center;
+          font-size: 3rem;
+          letter-spacing: 2px;
+          margin: 0;
+        }
+
         .newtapform-wrapper form {
           display: grid;
           grid-template-columns: 1fr;
-          align-items: center;
+          align-items: start;
           padding: 10px;
         }
 
@@ -28,6 +49,20 @@ function NewTapForm() {
           margin: 5px;
           padding: 10px;
           border-radius: 5px;
+          font-size: 1rem;
+        }
+
+        .form-section button {
+          background-color: #2b2b2b;
+          border: none;
+          color: white;
+          width: 150px;
+          display: block;
+          margin: 5px auto;
+        }
+
+        .form-section button:hover {
+          opacity: .7;
         }
 
         @media (min-width: 800px) {
@@ -37,35 +72,47 @@ function NewTapForm() {
         }
       `}</style>
       <div className="newtapform-wrapper">
-        <form>
+        <h1>+ NEW TAP</h1>
+        <form onSubmit={handleNewTapFormSubmission}>
           <div className="form-section">
-           <input
-             type='text'
-             id='img'
-             placeholder='Select an image'/>
-           </div>
-           <div className="form-section">
-             <input
-               type='text'
-               id='name'
-               placeholder='Enter beer name'/>
-             <input
-               id='price'
-               placeholder='Enter price per pint' />
-             <input
-               id='description'
-               placeholder='Enter beer description'/>
-           </div>
-           <div className="form-section">
-             <input
-                id='remaining'
-                placeholder='Enter pints in keg' />
-             <input
-               id='abv'
-               placeholder='Enter abv' />
-             <button type='submit'>ADD BEER</button>
-           </div>
-       </form>
+            <input
+              type='text'
+              id='img'
+              placeholder='Select an image url'
+              ref={(input) => {img = input;}}
+            />
+          </div>
+          <div className="form-section">
+            <input
+              type='text'
+              id='name'
+              placeholder='Enter beer name'
+              ref={(input) => {name = input;}} />
+            <input
+              id='price'
+              placeholder='Enter price per pint'
+              ref={(input) => {price = input;}} />
+            <input
+              id='brewer'
+              placeholder='Enter brewer name'
+              ref={(input) => {brewer = input;}} />
+            <input
+              id='description'
+              placeholder='Enter beer description'
+              ref={(input) => {description = input;}} />
+          </div>
+          <div className="form-section">
+            <input
+              id='remaining'
+              placeholder='Enter pints in keg'
+              ref={(input) => {remaining = input;}} />
+            <input
+              id='abv'
+              placeholder='Enter abv'
+              ref={(input) => {abv = input;}} />
+            <button type='submit'>ADD BEER</button>
+          </div>
+        </form>
       </div>
     </div>
   );
