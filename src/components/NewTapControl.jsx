@@ -8,12 +8,11 @@ function NewTapControl(props) {
     <div>
       <style jsx>{`
         .newtapcontrol-wrapper{
+          height: 100%;
           padding: 50px 25px;
           max-width: 900px;
-          height: 100vh;
           display: block;
           margin: 0 auto;
-          min-height: 350px;
         }
       `}</style>
       <div className="newtapcontrol-wrapper">

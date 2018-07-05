@@ -74,16 +74,19 @@ class App extends React.Component {
         <style jsx global>{`
           @import url('https://fonts.googleapis.com/css?family=Tangerine');
           @import url('https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps');
-
+          * {
+            box-sizing: border-box;
+          }
+          
           body, html {
             margin: 0;
             width:100%;
             height: 100%;
+            background-color: #0c0c0c;
           }
 
           .app-wrapper {
             font-family: sans-serif;
-            background-color: #0c0c0c;
             color: white;
             -moz-osx-font-smoothing: grayscale;
             -webkit-font-smoothing: antialiased;

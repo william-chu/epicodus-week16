@@ -75,7 +75,6 @@ class NewTapForm extends React.Component {
 
           .newtapform-wrapper select {
             width: 100%;
-            min-width: 200px;
             max-width: 300px;
             display: block;
             margin: 20px auto;
@@ -83,6 +82,7 @@ class NewTapForm extends React.Component {
             height: 2.5em;
             background: white;
             outline: none;
+            box-shadow: none;
           }
 
           .newtapform-wrapper img {
@@ -112,14 +112,16 @@ class NewTapForm extends React.Component {
           }
 
           .form-input-flex input {
-            padding: 10px;
-            width: 100%;
+            padding: 10px 10px;
+            width: 96%;
             border: none;
             border-radius: 5px;
             font-size: 1rem;
             max-width: 290px;
             display: block;
             margin: 10px auto;
+            outline: none;
+            box-shadow: none;
           }
 
           .newtapform-wrapper button {
@@ -138,11 +140,6 @@ class NewTapForm extends React.Component {
             opacity: .7;
           }
 
-          @media (min-width: 800px) {
-            .newtapform-wrapper form {
-              grid-template-columns: 1fr 1fr 1fr;
-            }
-          }
         `}</style>
         <div className="newtapform-wrapper">
           <h1>+ NEW TAP</h1>
