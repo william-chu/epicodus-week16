@@ -16,38 +16,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterTapList: [
-        {
-          img: kegHuntsman,
-          name: 'Huntsman Red',
-          brewer: 'Yharnam Brewing',
-          description: 'Full-bodied red ale',
-          abv: 6.8,
-          price: 7,
-          remaining: 248,
-          id: '1'
-        },
-        {
-          img: kegMadOne,
-          name: 'The Mad One',
-          brewer: 'Hemwick Hops',
-          description: 'IPA that will drive you crazy',
-          abv: 8,
-          price: 7,
-          remaining: 60,
-          id: '2'
-        },
-        {
-          img: kegCelestial,
-          name: 'Celestial Saison',
-          brewer: 'Iosefka\'s Clinic',
-          description: 'Spicy pale ale with fruit notes',
-          abv: 4.7,
-          price: 5,
-          remaining: 124,
-          id: '3'
-        },
-        {
+      masterTapList: {
+        '1' : {
           img: kegCainhurst,
           name: 'Cainhurst Cider',
           brewer: 'Silver Lady Orchard',
@@ -55,17 +25,49 @@ class App extends React.Component {
           abv:  5.9,
           price: 6,
           remaining: 75,
-          id: '4'
+        },
+        '2' : {
+          img: kegHuntsman,
+          name: 'Huntsman Red',
+          brewer: 'Yharnam Brewing',
+          description: 'Full-bodied red ale',
+          abv: 6.8,
+          price: 7,
+          remaining: 248,
+        },
+        '3' : {
+          img: kegMadOne,
+          name: 'The Mad One',
+          brewer: 'Hemwick Hops',
+          description: 'IPA that will drive you crazy',
+          abv: 8,
+          price: 7,
+          remaining: 60,
+        },
+        '4' : {
+          img: kegCelestial,
+          name: 'Celestial Saison',
+          brewer: 'Iosefka\'s Clinic',
+          description: 'Spicy pale ale with fruit notes',
+          abv: 4.7,
+          price: 5,
+          remaining: 124,
         }
-      ]
+      }
     };
     this.handleAddingNewTapToList = this.handleAddingNewTapToList.bind(this);
+    this.handleSellBeer = this.handleSellBeer.bind(this);
   }
 
   handleAddingNewTapToList(newTap) {
-    let newMasterTapList = this.state.masterTapList.slice();
-    newMasterTapList.push(newTap);
+    let newMasterTapList = Object.assign({}, this.state.masterTapList, {
+      [newTap.id]: newTap
+    });
     this.setState({masterTapList: newMasterTapList});
+  }
+
+  handleSellBeer() {
+    let newPintsRemaining = this.state.masterTapList.slice();
   }
 
   render() {
