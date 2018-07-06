@@ -6,6 +6,17 @@ import textureConcrete from '../assets/images/concrete_seamless.png';
 
 function Tap(props) {
   let percentRemaining = parseInt((props.remaining/248)*100);
+  let progressBarDisplay = <ProgressBar bsStyle="danger" now={percentRemaining} label={`${percentRemaining}%`}/>;
+  let kegWarning = null;
+  let tapStatus = .3;
+  let buttonStatus = null;
+
+  if (props.remaining === 0) {
+    progressBarDisplay = null;
+    kegWarning = 'REPLACE KEG';
+    tapStatus = .7;
+    buttonStatus = 'hide';
+  }
 
   function handleSellBeerClick() {
     props.onSellBeer(props.tapId);
@@ -14,13 +25,17 @@ function Tap(props) {
   return(
     <div>
       <style jsx>{`
+        .hide {
+          visibility: hidden;
+        }
+
         .tap-wrapper {
           display: grid;
           grid-template-columns: 1fr;
           align-items: center;
           padding: 10px;
           color: #2b2b2b;
-          background: linear-gradient(to bottom, rgba(0,0,0,.3),rgba(0,0,0,.3)), url(${textureConcrete});
+          background: linear-gradient(to bottom, rgba(0,0,0,${tapStatus}),rgba(0,0,0,${tapStatus})), url(${textureConcrete});
           border-radius: 5px;
         }
 
@@ -32,12 +47,18 @@ function Tap(props) {
           padding-bottom: 20px;
         }
 
-        .tap-wrapper h2, .tap-wrapper h3, .tap-wrapper h4, .tap-wrapper p {
+        .tap-wrapper h2, .tap-wrapper h3, .tap-wrapper h4, .tap-wrapper h5, .tap-wrapper p {
           text-align: center;
         }
 
         .tap-wrapper h4, .tap-wrapper h3, .tap-wrapper p {
           font-weight: lighter;
+        }
+
+        .tap-wrapper h5 {
+          color: #d9534d;
+          font-size: 3rem;
+          font-weight: bold;
         }
 
         .tap-wrapper p {
@@ -112,10 +133,11 @@ function Tap(props) {
         </div>
         <div className="left-border">
           <div className="keg-stats">
-            <ProgressBar bsStyle="danger" now={percentRemaining} label={`${percentRemaining}%`}/>
+            {progressBarDisplay}
+            <h5>{kegWarning}</h5>
             <h4>Pints Remaining: {props.remaining}</h4>
           </div>
-          <button onClick={handleSellBeerClick}>SELL BEER</button>
+          <button className={buttonStatus} onClick={handleSellBeerClick}>SELL BEER</button>
           <h2>{props.abv}% ABV</h2>
         </div>
       </div>
