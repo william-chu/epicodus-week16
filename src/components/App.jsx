@@ -24,7 +24,7 @@ class App extends React.Component {
           description: 'Full-bodied red ale',
           abv: 6.8,
           price: 7,
-          remaining: 20,
+          remaining: 248,
           id: '1'
         },
         {
@@ -44,7 +44,7 @@ class App extends React.Component {
           description: 'Spicy pale ale with fruit notes',
           abv: 4.7,
           price: 5,
-          remaining: 65,
+          remaining: 124,
           id: '3'
         },
         {
@@ -77,7 +77,7 @@ class App extends React.Component {
           * {
             box-sizing: border-box;
           }
-          
+
           body, html {
             margin: 0;
             width:100%;

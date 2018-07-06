@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ProgressBar from 'react-bootstrap/lib/ProgressBar';
 import textureConcrete from '../assets/images/concrete_seamless.png';
 
 function Tap(props) {
+  let percentRemaining = parseInt((props.remaining/248)*100);
   return(
     <div>
       <style jsx>{`
@@ -20,15 +22,15 @@ function Tap(props) {
           text-align: center;
           font-family: 'Tangerine', serif;
           border-bottom: 1px dotted #808284;
-          font-size: 2.5rem;
+          font-size: 3rem;
           padding-bottom: 20px;
         }
 
-        .tap-wrapper h2, .tap-wrapper h3, .tap-wrapper p {
+        .tap-wrapper h2, .tap-wrapper h4, .tap-wrapper p {
           text-align: center;
         }
 
-        .tap-wrapper h3, .tap-wrapper p {
+        .tap-wrapper h4, .tap-wrapper p {
           font-weight: lighter;
         }
 
@@ -44,7 +46,11 @@ function Tap(props) {
           box-shadow: 0 0 10px black;
           max-width: 300px;
           display: block;
-          margin: auto;
+          margin: 0 auto 20px;
+        }
+
+        .tap-wrapper .progress-bar {
+
         }
 
         @media (min-width: 800px) {
@@ -56,10 +62,15 @@ function Tap(props) {
             border-bottom: none;
           }
 
+          .tap-wrapper img {
+            margin: auto;
+          }
+
           .left-border {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-around;
+            padding-left: 10px;
             border-left: 1px dotted #808284;
             height: 100%;
           }
@@ -69,12 +80,21 @@ function Tap(props) {
         <img src={props.img} />
         <div>
           <h1>{props.name}<br/>${props.price}</h1>
-          <h3>- {props.brewer} -</h3>
+          <h4>- {props.brewer} -</h4>
           <p><em>{props.description}</em></p>
         </div>
         <div className="left-border">
-          <h3>Pints Remaining: {props.remaining}</h3>
-          <h2>{props.abv} ABV</h2>
+          <div>
+            <ProgressBar bsStyle={null} now={`${percentRemaining}`} label={`${percentRemaining}%`}/>
+            <div className="progress-bar"
+              aria-valuenow={`${percentRemaining}`}
+              aria-valuemin='0'
+              aria-valuemax='100'>
+                <span>{`${percentRemaining}%`}</span>
+            </div>
+            <h4>Pints Remaining: {props.remaining}</h4>
+          </div>
+          <h2>{props.abv}% ABV</h2>
         </div>
       </div>
     </div>

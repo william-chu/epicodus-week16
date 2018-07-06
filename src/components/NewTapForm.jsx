@@ -183,6 +183,7 @@ class NewTapForm extends React.Component {
                   id='remaining'
                   type="number"
                   min="1"
+                  max="248"
                   placeholder='Enter pints in keg'
                   required
                   ref={(input) => {this.remaining = input;}} />
