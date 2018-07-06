@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { v4 } from 'uuid';
 
 import textureConcrete from '../assets/images/concrete_seamless.png';
 import kegUnspecified from '../assets/images/keg_unspecified.jpg';
@@ -41,7 +40,7 @@ class NewTapForm extends React.Component {
 
   handleNewTapFormSubmission(e) {
     e.preventDefault();
-    this.props.onNewTapCreation({img: this.state.img, name: this.name.value, price: this.price.value, brewer: this.brewer.value, description: this.description.value, remaining: this.remaining.value, abv: this.abv.value, id: v4()});
+    this.props.onNewTapCreation({img: this.state.img, name: this.name.value, price: parseInt(this.price.value), brewer: this.brewer.value, description: this.description.value, remaining: parseInt(this.remaining.value), abv: parseFloat(this.abv.value)});
     this.name.value = '';
     this.price.value = '';
     this.brewer.value = '';

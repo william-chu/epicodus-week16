@@ -5,6 +5,7 @@ import TapList from './TapList';
 import NewTapControl from './NewTapControl';
 import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
+import { v4 } from 'uuid';
 
 import kegHuntsman from '../assets/images/keg_huntsman.png';
 import kegMadOne from '../assets/images/keg_madone.png';
@@ -56,19 +57,20 @@ class App extends React.Component {
       }
     };
     this.handleAddingNewTapToList = this.handleAddingNewTapToList.bind(this);
-    this.handleSellBeer = this.handleSellBeer.bind(this);
+    // this.handleSellBeer = this.handleSellBeer.bind(this);
   }
 
   handleAddingNewTapToList(newTap) {
+    let newTapId = v4();
     let newMasterTapList = Object.assign({}, this.state.masterTapList, {
-      [newTap.id]: newTap
+      [newTapId]: newTap
     });
     this.setState({masterTapList: newMasterTapList});
   }
 
-  handleSellBeer() {
-    let newPintsRemaining = this.state.masterTapList.slice();
-  }
+  // handleSellBeer() {
+  //   let newPintsRemaining = this.state.masterTapList.slice();
+  // }
 
   render() {
     return (

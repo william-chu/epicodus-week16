@@ -106,7 +106,7 @@ function Tap(props) {
         </div>
         <div className="left-border">
           <div className="keg-stats">
-            <ProgressBar bsStyle="danger" now={`${percentRemaining}`} label={`${percentRemaining}%`}/>
+            <ProgressBar bsStyle="danger" now={percentRemaining} label={`${percentRemaining}%`}/>
             <h4>Pints Remaining: {props.remaining}</h4>
           </div>
           <button>SELL BEER</button>

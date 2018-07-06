@@ -32,8 +32,8 @@ function TapList(props) {
       `}</style>
       <div className="taplist-wrapper">
         <div className="taplist-grid">
-          {Object.keys(props.tapList).map(function(kegId) {
-            let keg = props.tapList[kegId];
+          {Object.keys(props.tapList).map(function(tapId) {
+            let keg = props.tapList[tapId];
             return <Tap
               img={keg.img}
               name={keg.name}
@@ -42,7 +42,7 @@ function TapList(props) {
               abv={keg.abv}
               price={keg.price}
               remaining={keg.remaining}
-              key={kegId} />;
+              key={tapId} />;
           })}
         </div>
       </div>
