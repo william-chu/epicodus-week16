@@ -49,8 +49,25 @@ function Tap(props) {
           margin: 0 auto 20px;
         }
 
+        .tap-wrapper button {
+          background-color: #2b2b2b;
+          color: white;
+          width: 150px;
+          border: none;
+          border-radius: 5px;
+          font-size: 1.4rem;
+          display: block;
+          padding: 10px;
+          margin: 20px auto 10px;
+          outline: none;
+        }
+
+        .tap-wrapper button:hover {
+          opacity: .7;
+        }
+
         .tap-wrapper .keg-stats {
-          margin-top : 20px;
+          margin-top : 25px;
         }
 
         @media (min-width: 800px) {
@@ -67,7 +84,7 @@ function Tap(props) {
           }
 
           .tap-wrapper .keg-stats {
-            margin-top : 75px;
+            margin-top : 50px;
           }
 
           .left-border {
@@ -92,6 +109,7 @@ function Tap(props) {
             <ProgressBar bsStyle="danger" now={`${percentRemaining}`} label={`${percentRemaining}%`}/>
             <h4>Pints Remaining: {props.remaining}</h4>
           </div>
+          <button>SELL BEER</button>
           <h2>{props.abv}% ABV</h2>
         </div>
       </div>

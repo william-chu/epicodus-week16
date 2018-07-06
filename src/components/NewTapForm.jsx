@@ -138,9 +138,10 @@ class NewTapForm extends React.Component {
             display: block;
             padding: 10px;
             margin: 20px auto 10px;
+            outline: none;
           }
 
-          .form-input-flex button:hover {
+          .newtapform-wrapper button:hover {
             opacity: .7;
           }
 
