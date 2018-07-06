@@ -1,6 +1,7 @@
 import React from 'react';
 import ProgressBar from 'react-bootstrap/lib/ProgressBar';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import textureConcrete from '../assets/images/concrete_seamless.png';
 
@@ -95,17 +96,25 @@ function Tap(props) {
           outline: none;
         }
 
+        .tap-wrapper .button-flex {
+          display: flex;
+          justify-content: space-around;
+        }
+
         .tap-wrapper .delete-button {
           background-color: #d9534d;
-          color: white;
           width: 30px;
-          border: none;
-          border-radius: 5px;
-          font-size: 1.4rem;
-          display: block;
+          display: inline;
           padding: 5px;
           margin: auto;
-          outline: none;
+
+        }
+
+        .tap-wrapper .edit-button {
+          width: 60px;
+          display: inline;
+          padding: 5px;
+          margin: auto;
         }
 
         .tap-wrapper button:hover {
@@ -159,7 +168,16 @@ function Tap(props) {
           </div>
           <button className={buttonStatus} onClick={handleSellBeerClick}>SELL BEER</button>
           <h2>{props.abv}% ABV</h2>
-          <button className="delete-button" onClick={handleDeleteTapClick}>X</button>
+          <div className="button-flex">
+            <button className="edit-button">
+              <Link to={{
+                pathname: '/edit-tap',
+                state: { tapId: 2 }
+              }}>EDIT
+              </Link>
+            </button>
+            <button className="delete-button" onClick={handleDeleteTapClick}>X</button>
+          </div>
         </div>
       </div>
     </div>
