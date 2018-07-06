@@ -23,30 +23,30 @@ function LandingPage() {
           margin: 0;
           font-family: 'Tangerine', serif;
           font-weight: lighter;
-          font-size: 6rem;
+          font-size: 12rem;
         }
 
         .landing-wrapper p {
-          font-size: 1.2rem;
+          font-size: 1.8rem;
         }
 
         .landing-wrapper .author-text {
-          font-size: 1rem;
+          font-size: 1.8rem;
           padding-left: 175px;
           font-family: serif;
         }
 
         @media (min-width: 1000px) {
           .landing-wrapper h1 {
-            font-size: 8rem;
+            font-size: 20rem;
           }
 
           .landing-wrapper p {
-            font-size: 1.8rem;
+            font-size: 3rem;
           }
 
           .landing-wrapper .author-text {
-            font-size: 1.5rem;
+            font-size: 2.5rem;
             padding-left: 250px;
           }
         }

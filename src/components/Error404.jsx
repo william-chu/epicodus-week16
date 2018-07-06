@@ -21,7 +21,7 @@ function Error404(){
 
         .error-wrapper h1 {
           font-family: 'Bilbo Swash Caps', serif;
-          font-size: 2rem;
+          font-size: 4rem;
           letter-spacing: 1px;
           max-width: 900px;
           margin: 0;
@@ -33,11 +33,11 @@ function Error404(){
 
         @media (min-width: 1000px) {
           .error-wrapper h1 {
-            font-size: 2.6rem;
+            font-size: 5.6rem;
           }
 
           .error-wrapper h2, .error-wrapper h3 {
-            font-size: 2rem;
+            font-size: 3.6rem;
           }
         }
       `}</style>

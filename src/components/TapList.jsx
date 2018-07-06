@@ -7,7 +7,7 @@ function TapList(props) {
     <div>
       <style jsx>{`
         .taplist-wrapper {
-          padding: 50px 25px;
+          padding: 75px 25px 50px;
           max-width: 900px;
           display: block;
           margin: 0 auto;

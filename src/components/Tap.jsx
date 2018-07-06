@@ -22,11 +22,11 @@ function Tap(props) {
           text-align: center;
           font-family: 'Tangerine', serif;
           border-bottom: 1px dotted #808284;
-          font-size: 3rem;
+          font-size: 5rem;
           padding-bottom: 20px;
         }
 
-        .tap-wrapper h2, .tap-wrapper h4, .tap-wrapper p {
+        .tap-wrapper h2, .tap-wrapper h3, .tap-wrapper h4, .tap-wrapper p {
           text-align: center;
         }
 
@@ -36,7 +36,7 @@ function Tap(props) {
 
         .tap-wrapper p {
           padding: 10px 15px 0;
-          font-size: 1.1rem;
+          font-size: 1.8rem;
           font-family: serif;
         }
 
@@ -49,8 +49,8 @@ function Tap(props) {
           margin: 0 auto 20px;
         }
 
-        .tap-wrapper .progress-bar {
-
+        .tap-wrapper .keg-stats {
+          margin-top : 20px;
         }
 
         @media (min-width: 800px) {
@@ -64,6 +64,10 @@ function Tap(props) {
 
           .tap-wrapper img {
             margin: auto;
+          }
+
+          .tap-wrapper .keg-stats {
+            margin-top : 100px;
           }
 
           .left-border {
@@ -80,18 +84,12 @@ function Tap(props) {
         <img src={props.img} />
         <div>
           <h1>{props.name}<br/>${props.price}</h1>
-          <h4>- {props.brewer} -</h4>
+          <h3>- {props.brewer} -</h3>
           <p><em>{props.description}</em></p>
         </div>
         <div className="left-border">
-          <div>
-            <ProgressBar bsStyle={null} now={`${percentRemaining}`} label={`${percentRemaining}%`}/>
-            <div className="progress-bar"
-              aria-valuenow={`${percentRemaining}`}
-              aria-valuemin='0'
-              aria-valuemax='100'>
-                <span>{`${percentRemaining}%`}</span>
-            </div>
+          <div className="keg-stats">
+            <ProgressBar bsStyle="danger" now={`${percentRemaining}`} label={`${percentRemaining}%`}/>
             <h4>Pints Remaining: {props.remaining}</h4>
           </div>
           <h2>{props.abv}% ABV</h2>

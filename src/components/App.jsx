@@ -31,7 +31,7 @@ class App extends React.Component {
           img: kegMadOne,
           name: 'The Mad One',
           brewer: 'Hemwick Hops',
-          description: 'Double IPA that will drive you crazy',
+          description: 'IPA that will drive you crazy',
           abv: 8,
           price: 7,
           remaining: 60,
@@ -51,7 +51,7 @@ class App extends React.Component {
           img: kegCainhurst,
           name: 'Cainhurst Cider',
           brewer: 'Silver Lady Orchard',
-          description: 'A refreshingly dry cider',
+          description: 'Refreshingly dry cider',
           abv:  5.9,
           price: 6,
           remaining: 75,
@@ -92,13 +92,13 @@ class App extends React.Component {
             -webkit-font-smoothing: antialiased;
           }
 
-          a {
+          .app-wrapper a {
             color: white;
             text-decoration: none;
             letter-spacing: 2px;
           }
 
-          a:hover {
+          .app-wrapper a:hover {
             opacity: .7;
           }
         `}</style>

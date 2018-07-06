@@ -8,6 +8,7 @@ function Header() {
         .header-wrapper {
           background-color: rgba(0,0,0,.7);
           display: flex;
+          font-size: 2rem;
           justify-content: space-around;
           padding: 10px 0;
           position: fixed;

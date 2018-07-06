@@ -116,10 +116,10 @@ class NewTapForm extends React.Component {
             width: 96%;
             border: none;
             border-radius: 5px;
-            font-size: 1rem;
+            font-size: 1.4rem;
             max-width: 290px;
             display: block;
-            margin: 10px auto;
+            margin: 8px auto;
             outline: none;
             box-shadow: none;
           }
@@ -130,7 +130,7 @@ class NewTapForm extends React.Component {
             width: 150px;
             border: none;
             border-radius: 5px;
-            font-size: 1rem;
+            font-size: 1.4rem;
             display: block;
             padding: 10px;
             margin: 20px auto 10px;

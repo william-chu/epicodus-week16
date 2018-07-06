@@ -9,7 +9,7 @@ function NewTapControl(props) {
       <style jsx>{`
         .newtapcontrol-wrapper{
           height: 100%;
-          padding: 50px 25px;
+          padding: 75px 25px 50px;
           max-width: 900px;
           display: block;
           margin: 0 auto;
