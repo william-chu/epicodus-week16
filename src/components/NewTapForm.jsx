@@ -216,7 +216,7 @@ class NewTapForm extends React.Component {
 }
 
 NewTapForm.propTypes = {
-  onNewTapCreation: PropTypes.func
+  onNewTapCreation: PropTypes.func,
 };
 
 export default NewTapForm;

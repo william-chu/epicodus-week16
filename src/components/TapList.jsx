@@ -42,6 +42,8 @@ function TapList(props) {
               abv={keg.abv}
               price={keg.price}
               remaining={keg.remaining}
+              onSellBeer={props.onSellBeer}
+              tapId={tapId}
               key={tapId} />;
           })}
         </div>
@@ -51,7 +53,8 @@ function TapList(props) {
 }
 
 TapList.propTypes = {
-  tapList: PropTypes.object
+  tapList: PropTypes.object,
+  onSellBeer: PropTypes.func,
 };
 
 export default TapList;

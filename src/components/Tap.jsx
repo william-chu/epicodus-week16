@@ -1,10 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ProgressBar from 'react-bootstrap/lib/ProgressBar';
+import PropTypes from 'prop-types';
+
 import textureConcrete from '../assets/images/concrete_seamless.png';
 
 function Tap(props) {
   let percentRemaining = parseInt((props.remaining/248)*100);
+
+  function handleSellBeerClick() {
+    props.onSellBeer(props.tapId);
+  }
+
   return(
     <div>
       <style jsx>{`
@@ -109,7 +115,7 @@ function Tap(props) {
             <ProgressBar bsStyle="danger" now={percentRemaining} label={`${percentRemaining}%`}/>
             <h4>Pints Remaining: {props.remaining}</h4>
           </div>
-          <button>SELL BEER</button>
+          <button onClick={handleSellBeerClick}>SELL BEER</button>
           <h2>{props.abv}% ABV</h2>
         </div>
       </div>
@@ -124,7 +130,9 @@ Tap.propTypes = {
   description: PropTypes.string.isRequired,
   abv: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
-  remaining: PropTypes.number.isRequired
+  remaining: PropTypes.number.isRequired,
+  tapId: PropTypes.string.isRequired,
+  onSellBeer: PropTypes.func,
 };
 
 export default Tap;

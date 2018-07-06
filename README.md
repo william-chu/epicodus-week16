@@ -23,8 +23,8 @@ A tap room application built in React.
 
 ## Setup/Installation Requirements
 
-* To view project, launch in browser https://william-chu.github.io/epicodus-week16/#/
-* To view project code, clone repository from https://github.com/william-chu/epicodus-week16
+* To view project, launch in browser https://william-chu.github.io/epicodus-week16-17/#/
+* To view project code, clone repository from https://github.com/william-chu/epicodus-week16-17
 * Install Node.js
 * Open terminal, navigate to project root folder and run npm install
 * To bundle and build project distribution folder, run npm run build

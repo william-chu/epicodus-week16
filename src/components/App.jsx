@@ -43,7 +43,7 @@ class App extends React.Component {
           description: 'IPA that will drive you crazy',
           abv: 8,
           price: 7,
-          remaining: 60,
+          remaining: 5,
         },
         '4' : {
           img: kegCelestial,
@@ -57,7 +57,7 @@ class App extends React.Component {
       }
     };
     this.handleAddingNewTapToList = this.handleAddingNewTapToList.bind(this);
-    // this.handleSellBeer = this.handleSellBeer.bind(this);
+    this.handleSellBeer = this.handleSellBeer.bind(this);
   }
 
   handleAddingNewTapToList(newTap) {
@@ -68,9 +68,13 @@ class App extends React.Component {
     this.setState({masterTapList: newMasterTapList});
   }
 
-  // handleSellBeer() {
-  //   let newPintsRemaining = this.state.masterTapList.slice();
-  // }
+  handleSellBeer(tapId) {
+    let newMasterTapList = Object.assign({}, this.state.masterTapList);
+    if (newMasterTapList[tapId].remaining > 0) {
+      newMasterTapList[tapId].remaining -= 1;
+      this.setState({masterTapList: newMasterTapList});
+    }
+  }
 
   render() {
     return (
@@ -110,7 +114,7 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route exact path='/' component={LandingPage} />
-            <Route exact path='/taplist' render={()=><TapList tapList={this.state.masterTapList} />} />
+            <Route exact path='/taplist' render={()=><TapList tapList={this.state.masterTapList} onSellBeer={this.handleSellBeer} />} />
             <Route exact path='/new-tap' render={()=><NewTapControl onNewTapCreation={this.handleAddingNewTapToList} />} />
             <Route component={Error404} />
           </Switch>

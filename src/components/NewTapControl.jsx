@@ -23,7 +23,7 @@ function NewTapControl(props) {
 }
 
 NewTapControl.propTypes = {
-  onNewTapCreation: PropTypes.func
+  onNewTapCreation: PropTypes.func,
 };
 
 export default NewTapControl;
