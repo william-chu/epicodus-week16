@@ -8,7 +8,9 @@ A tap room application built in React.
 
 ## Component Structure
 
-![Component Structure](https://raw.githubusercontent.com/william-chu/epicodus-week16/master/component_structure.png)
+| State Lifted | Static Components |
+| ------------ | ---------------- |
+| ![Component Structure](https://raw.githubusercontent.com/william-chu/epicodus-week16-17/master/component_structurenew.png) | ![Component Structure](https://raw.githubusercontent.com/william-chu/epicodus-week16-17/master/component_structure.png) |
 
 ## Development Issues
 * Not sure how I should structure the form without knowing about state
