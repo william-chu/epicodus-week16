@@ -22,6 +22,12 @@ function Tap(props) {
     props.onSellBeer(props.tapId);
   }
 
+  function handleDeleteTapClick() {
+    if(window.confirm('Are you sure you want to remove this tap?')) {
+      props.onDeleteTap(props.tapId);
+    }
+  }
+
   return(
     <div>
       <style jsx>{`
@@ -89,8 +95,26 @@ function Tap(props) {
           outline: none;
         }
 
+        .tap-wrapper .delete-button {
+          background-color: #d9534d;
+          color: white;
+          width: 30px;
+          border: none;
+          border-radius: 5px;
+          font-size: 1.4rem;
+          display: block;
+          padding: 5px;
+          margin: auto;
+          outline: none;
+        }
+
         .tap-wrapper button:hover {
           opacity: .7;
+        }
+
+        .tap-wrapper .delete-button:hover {
+          opacity: 1;
+          background-color: #c14b47;
         }
 
         .tap-wrapper .keg-stats {
@@ -110,16 +134,12 @@ function Tap(props) {
             margin: auto;
           }
 
-          .tap-wrapper .keg-stats {
-            margin-top : 50px;
-          }
-
           .left-border {
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             padding-left: 10px;
-            border-left: 1px dotted #808284;
+            border-left: 1px dashed #808284;
             height: 100%;
           }
         }
@@ -139,6 +159,7 @@ function Tap(props) {
           </div>
           <button className={buttonStatus} onClick={handleSellBeerClick}>SELL BEER</button>
           <h2>{props.abv}% ABV</h2>
+          <button className="delete-button" onClick={handleDeleteTapClick}>X</button>
         </div>
       </div>
     </div>
@@ -155,6 +176,7 @@ Tap.propTypes = {
   remaining: PropTypes.number.isRequired,
   tapId: PropTypes.string.isRequired,
   onSellBeer: PropTypes.func,
+  onDeleteTap: PropTypes.func,
 };
 
 export default Tap;

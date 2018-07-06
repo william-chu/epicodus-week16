@@ -43,6 +43,7 @@ function TapList(props) {
               price={keg.price}
               remaining={keg.remaining}
               onSellBeer={props.onSellBeer}
+              onDeleteTap={props.onDeleteTap}
               tapId={tapId}
               key={tapId} />;
           })}
@@ -55,6 +56,7 @@ function TapList(props) {
 TapList.propTypes = {
   tapList: PropTypes.object,
   onSellBeer: PropTypes.func,
+  onDeleteTap: PropTypes.func,
 };
 
 export default TapList;

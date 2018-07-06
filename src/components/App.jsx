@@ -58,6 +58,7 @@ class App extends React.Component {
     };
     this.handleAddingNewTapToList = this.handleAddingNewTapToList.bind(this);
     this.handleSellBeer = this.handleSellBeer.bind(this);
+    this.handleDeleteTap = this.handleDeleteTap.bind(this);
   }
 
   handleAddingNewTapToList(newTap) {
@@ -74,6 +75,12 @@ class App extends React.Component {
       newMasterTapList[tapId].remaining -= 1;
       this.setState({masterTapList: newMasterTapList});
     }
+  }
+
+  handleDeleteTap(tapId) {
+    let newMasterTapList = Object.assign({}, this.state.masterTapList);
+    delete newMasterTapList[tapId];
+    this.setState({masterTapList: newMasterTapList});
   }
 
   render() {
@@ -114,7 +121,7 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route exact path='/' component={LandingPage} />
-            <Route exact path='/taplist' render={()=><TapList tapList={this.state.masterTapList} onSellBeer={this.handleSellBeer} />} />
+            <Route exact path='/taplist' render={()=><TapList tapList={this.state.masterTapList} onSellBeer={this.handleSellBeer} onDeleteTap={this.handleDeleteTap} />} />
             <Route exact path='/new-tap' render={()=><NewTapControl onNewTapCreation={this.handleAddingNewTapToList} />} />
             <Route component={Error404} />
           </Switch>
