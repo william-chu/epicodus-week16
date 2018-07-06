@@ -36,7 +36,22 @@ function LandingPage() {
           font-family: serif;
         }
 
-        @media (min-width: 1000px) {
+        @media (min-width: 600px) {
+          .landing-wrapper h1 {
+            font-size: 17rem;
+          }
+
+          .landing-wrapper p {
+            font-size: 2.5rem;
+          }
+
+          .landing-wrapper .author-text {
+            font-size: 2.2rem;
+            padding-left: 250px;
+          }
+        }
+
+        @media (min-width: 1200px) {
           .landing-wrapper h1 {
             font-size: 20rem;
           }
