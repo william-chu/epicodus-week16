@@ -30,7 +30,7 @@ function Tap(props) {
           text-align: center;
         }
 
-        .tap-wrapper h4, .tap-wrapper p {
+        .tap-wrapper h4, .tap-wrapper h3, .tap-wrapper p {
           font-weight: lighter;
         }
 
@@ -67,7 +67,7 @@ function Tap(props) {
           }
 
           .tap-wrapper .keg-stats {
-            margin-top : 100px;
+            margin-top : 75px;
           }
 
           .left-border {

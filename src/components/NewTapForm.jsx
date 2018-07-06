@@ -4,10 +4,14 @@ import { v4 } from 'uuid';
 
 import textureConcrete from '../assets/images/concrete_seamless.png';
 import kegUnspecified from '../assets/images/keg_unspecified.jpg';
-import kegHuntsman from '../assets/images/keg_huntsman.png';
-import kegMadOne from '../assets/images/keg_madone.png';
+import kegBell from '../assets/images/keg_bellringer.png';
 import kegCelestial from '../assets/images/keg_celestial.png';
 import kegCainhurst from '../assets/images/keg_cainhurst.png';
+import kegCrow from '../assets/images/keg_crow.png';
+import kegDog from '../assets/images/keg_dog.png';
+import kegHuntsman from '../assets/images/keg_huntsman.png';
+import kegMadOne from '../assets/images/keg_madone.png';
+import kegSpider from '../assets/images/keg_spider.png';
 
 class NewTapForm extends React.Component {
 
@@ -148,10 +152,14 @@ class NewTapForm extends React.Component {
               <div>
                 <select value={this.state.img} onChange={this.handleImageSelect} required>
                   <option value="" defaultValue>Select an image</option>
+                  <option value={kegBell}>Bell Ringer</option>
+                  <option value={kegCainhurst}>Cainhurst Spirit</option>
+                  <option value={kegCelestial}>Celestial Emissary</option>
+                  <option value={kegCrow}>Carrion Crow</option>
+                  <option value={kegDog}>Rabid Dog</option>
                   <option value={kegHuntsman}>Huntsman</option>
                   <option value={kegMadOne}>Mad One</option>
-                  <option value={kegCelestial}>Celestial</option>
-                  <option value={kegCainhurst}>Cainhurst</option>
+                  <option value={kegSpider}>Nightmare Apostle</option>
                 </select>
                 <img src={this.state.img} />
               </div>
@@ -176,6 +184,7 @@ class NewTapForm extends React.Component {
                   id='price'
                   type="number"
                   min="1"
+                  max="15"
                   placeholder='Enter price per pint'
                   required
                   ref={(input) => {this.price = input;}} />
@@ -192,6 +201,7 @@ class NewTapForm extends React.Component {
                   type="number"
                   step=".1"
                   min="0.1"
+                  max="70"
                   placeholder='Enter ABV'
                   required
                   ref={(input) => {this.abv = input;}} />
