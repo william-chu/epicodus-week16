@@ -54,6 +54,14 @@ class NewTapForm extends React.Component {
     return (
       <div>
         <style jsx>{`
+          .newtapform-container {
+            height: 100%;
+            padding: 75px 25px 50px;
+            max-width: 900px;
+            display: block;
+            margin: 0 auto;
+          }
+
           .newtapform-wrapper{
             color: #2b2b2b;
             background: linear-gradient(to bottom, rgba(0,0,0,.3),rgba(0,0,0,.3)), url(${textureConcrete});
@@ -145,70 +153,72 @@ class NewTapForm extends React.Component {
           }
 
         `}</style>
-        <div className="newtapform-wrapper">
-          <h1>+ NEW TAP</h1>
-          <form onSubmit={this.handleNewTapFormSubmission}>
-            <div className="form-section-grid">
-              <div>
-                <select value={this.state.img} onChange={this.handleImageSelect} required>
-                  <option value="" defaultValue>Select an image</option>
-                  <option value={kegBell}>Bell Ringer</option>
-                  <option value={kegCainhurst}>Cainhurst Spirit</option>
-                  <option value={kegCelestial}>Celestial Emissary</option>
-                  <option value={kegCrow}>Carrion Crow</option>
-                  <option value={kegDog}>Rabid Dog</option>
-                  <option value={kegHuntsman}>Huntsman</option>
-                  <option value={kegMadOne}>Mad One</option>
-                  <option value={kegSpider}>Nightmare Apostle</option>
-                </select>
-                <img src={this.state.img} />
+        <div className="newtapform-container">
+          <div className="newtapform-wrapper">
+            <h1>+ NEW TAP</h1>
+            <form onSubmit={this.handleNewTapFormSubmission}>
+              <div className="form-section-grid">
+                <div>
+                  <select value={this.state.img} onChange={this.handleImageSelect} required>
+                    <option value="" defaultValue>Select an image</option>
+                    <option value={kegBell}>Bell Ringer</option>
+                    <option value={kegCainhurst}>Cainhurst Spirit</option>
+                    <option value={kegCelestial}>Celestial Emissary</option>
+                    <option value={kegCrow}>Carrion Crow</option>
+                    <option value={kegDog}>Rabid Dog</option>
+                    <option value={kegHuntsman}>Huntsman</option>
+                    <option value={kegMadOne}>Mad One</option>
+                    <option value={kegSpider}>Nightmare Apostle</option>
+                  </select>
+                  <img src={this.state.img} />
+                </div>
+                <div className="form-input-flex">
+                  <input
+                    type='text'
+                    id='name'
+                    placeholder='Enter beer name'
+                    required
+                    ref={(input) => {this.name = input;}} />
+                  <input
+                    id='brewer'
+                    placeholder='Enter brewer name'
+                    required
+                    ref={(input) => {this.brewer = input;}} />
+                  <input
+                    id='description'
+                    placeholder='Enter beer description'
+                    required
+                    ref={(input) => {this.description = input;}} />
+                  <input
+                    id='price'
+                    type="number"
+                    min="1"
+                    max="15"
+                    placeholder='Enter price per pint'
+                    required
+                    ref={(input) => {this.price = input;}} />
+                  <input
+                    id='remaining'
+                    type="number"
+                    min="1"
+                    max="248"
+                    placeholder='Enter pints in keg'
+                    required
+                    ref={(input) => {this.remaining = input;}} />
+                  <input
+                    id='abv'
+                    type="number"
+                    step=".1"
+                    min="0.1"
+                    max="70"
+                    placeholder='Enter ABV'
+                    required
+                    ref={(input) => {this.abv = input;}} />
+                </div>
               </div>
-              <div className="form-input-flex">
-                <input
-                  type='text'
-                  id='name'
-                  placeholder='Enter beer name'
-                  required
-                  ref={(input) => {this.name = input;}} />
-                <input
-                  id='brewer'
-                  placeholder='Enter brewer name'
-                  required
-                  ref={(input) => {this.brewer = input;}} />
-                <input
-                  id='description'
-                  placeholder='Enter beer description'
-                  required
-                  ref={(input) => {this.description = input;}} />
-                <input
-                  id='price'
-                  type="number"
-                  min="1"
-                  max="15"
-                  placeholder='Enter price per pint'
-                  required
-                  ref={(input) => {this.price = input;}} />
-                <input
-                  id='remaining'
-                  type="number"
-                  min="1"
-                  max="248"
-                  placeholder='Enter pints in keg'
-                  required
-                  ref={(input) => {this.remaining = input;}} />
-                <input
-                  id='abv'
-                  type="number"
-                  step=".1"
-                  min="0.1"
-                  max="70"
-                  placeholder='Enter ABV'
-                  required
-                  ref={(input) => {this.abv = input;}} />
-              </div>
-            </div>
-            <button type='submit'>ADD BEER</button>
-          </form>
+              <button type='submit'>ADD BEER</button>
+            </form>
+          </div>
         </div>
       </div>
     );

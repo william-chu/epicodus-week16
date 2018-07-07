@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header';
 import LandingPage from './LandingPage';
 import TapList from './TapList';
-import NewTapControl from './NewTapControl';
+import NewTapForm from './NewTapForm';
 import EditTapForm from './EditTapForm';
 import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
@@ -131,8 +131,8 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/' component={LandingPage} />
             <Route exact path='/taplist' render={()=><TapList tapList={this.state.masterTapList} onSellBeer={this.handleSellBeer} onDeleteTap={this.handleDeleteTap} />} />
-            <Route exact path='/new-tap' render={()=><NewTapControl onNewTapCreation={this.handleAddingNewTapToList} />} />
-            <Route exact path='/edit-tap' render={()=><EditTapForm tapList={this.state.masterTapList} onEditTap={this.handleEditTap} />} />
+            <Route exact path='/new-tap' render={()=><NewTapForm onNewTapCreation={this.handleAddingNewTapToList} />} />
+            <Route exact path='/edit-tap/:tapId' render={(props)=><EditTapForm path={props} selectedTapId={props.match.params.tapId} tapList={this.state.masterTapList} onEditTap={this.handleEditTap} />} />
             <Route component={Error404} />
           </Switch>
         </div>

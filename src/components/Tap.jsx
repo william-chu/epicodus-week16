@@ -11,6 +11,7 @@ function Tap(props) {
   let kegWarning = null;
   let tapStatus = .3;
   let buttonStatus = null;
+  let linkPath = '/edit-tap/' + props.tapId;
 
   if (props.remaining === 0) {
     progressBarDisplay = null;
@@ -86,7 +87,7 @@ function Tap(props) {
         .tap-wrapper button {
           background-color: #2b2b2b;
           color: white;
-          width: 150px;
+          width: 100px;
           border: none;
           border-radius: 5px;
           font-size: 1.4rem;
@@ -98,23 +99,21 @@ function Tap(props) {
 
         .tap-wrapper .button-flex {
           display: flex;
-          justify-content: space-around;
+          justify-content: space-between;
         }
 
         .tap-wrapper .delete-button {
           background-color: #d9534d;
           width: 30px;
-          display: inline;
           padding: 5px;
-          margin: auto;
-
+          margin: 0;
         }
 
         .tap-wrapper .edit-button {
+          background-color: #2b2b2b;
           width: 60px;
-          display: inline;
           padding: 5px;
-          margin: auto;
+          margin: 0;
         }
 
         .tap-wrapper button:hover {
@@ -128,6 +127,7 @@ function Tap(props) {
 
         .tap-wrapper .keg-stats {
           margin-top : 25px;
+          padding: 0 10px;
         }
 
         @media (min-width: 800px) {
@@ -161,21 +161,15 @@ function Tap(props) {
           <p><em>{props.description}</em></p>
         </div>
         <div className="left-border">
+          <button className={buttonStatus} onClick={handleSellBeerClick}>SELL</button>
           <div className="keg-stats">
             {progressBarDisplay}
             <h5>{kegWarning}</h5>
             <h4>Pints Remaining: {props.remaining}</h4>
           </div>
-          <button className={buttonStatus} onClick={handleSellBeerClick}>SELL BEER</button>
           <h2>{props.abv}% ABV</h2>
           <div className="button-flex">
-            <button className="edit-button">
-              <Link to={{
-                pathname: '/edit-tap',
-                state: { tapId: 2 }
-              }}>EDIT
-              </Link>
-            </button>
+            <Link to={linkPath}><button className="edit-button">EDIT</button></Link>
             <button className="delete-button" onClick={handleDeleteTapClick}>X</button>
           </div>
         </div>
