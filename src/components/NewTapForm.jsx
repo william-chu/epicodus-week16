@@ -30,6 +30,7 @@ class NewTapForm extends React.Component {
   }
 
   handleImageSelect(e) {
+    e.preventDefault();
     if (e.target.value === '') {
       this.setState({img: kegUnspecified});
     } else {
